@@ -169,10 +169,16 @@
             align-items: center;
         }
 
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
         .hero-content h1 {
             font-size: 3rem;
             font-weight: 700;
             color: var(--dark-color);
+            margin-bottom: 20px;
         }
 
         .hero-content .highlight {
@@ -184,13 +190,13 @@
             color: var(--primary-color);
             font-weight: 600;
             min-height: 40px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .hero-content p {
             font-size: 1.1rem;
             color: #555;
-            margin-top: 10px;
+            margin-bottom: 30px;
         }
 
         /* Scroll Icon */
@@ -200,6 +206,7 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
+            z-index: 2;
         }
 
         .scroll-down i {
@@ -226,7 +233,7 @@
             border-radius: 50%;
             opacity: 0.1;
             background: var(--gradient);
-            z-index: 0;
+            z-index: 1;
         }
 
         .blob1 {
@@ -274,6 +281,7 @@
         .btn-primary:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(255, 133, 162, 0.5);
+            color: white;
         }
 
         .btn-outline-primary {
@@ -293,6 +301,11 @@
             box-shadow: 0 15px 30px rgba(255, 133, 162, 0.3);
         }
 
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
         /* About Section */
         #about {
@@ -310,6 +323,8 @@
             border-radius: 20px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            width: 100%;
+            height: auto;
         }
 
         .about-image:hover img {
@@ -370,6 +385,7 @@
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             text-align: center;
             border-top: 4px solid transparent;
+            height: 100%;
         }
 
         .skill-card:hover {
@@ -402,19 +418,9 @@
             font-weight: 600;
         }
 
-        .skill-progress {
-            height: 8px;
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-
-        .skill-progress-bar {
-            height: 100%;
-            border-radius: 10px;
-            background: var(--gradient);
-            transition: width 1.5s ease-in-out;
+        .skill-card p {
+            color: #8b88b1;
+            margin-bottom: 0;
         }
 
         /* Tools Section */
@@ -430,6 +436,7 @@
             border-radius: 15px;
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             background-color: rgba(255, 133, 162, 0.05);
+            height: 100%;
         }
 
         .tool-item:hover {
@@ -531,6 +538,7 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            height: 100%;
         }
 
         .timeline-content:hover {
@@ -584,59 +592,6 @@
             left: 20px;
         }
 
-        /* Services Section */
-        #services {
-            background-color: var(--light-color);
-            position: relative;
-        }
-
-        .service-card {
-            background-color: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            border-top: 4px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-top: 4px solid var(--primary-color);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            line-height: 80px;
-            text-align: center;
-            background-color: rgba(255, 133, 162, 0.1);
-            border-radius: 50%;
-            color: var(--primary-color);
-            font-size: 30px;
-            margin-bottom: 20px;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .service-card:hover .service-icon {
-            background: var(--gradient);
-            color: white;
-            transform: rotateY(180deg);
-        }
-
-        .service-card h4 {
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .service-card p {
-            color: #8b88b1;
-        }
-
         /* Portfolio Section */
         #portfolio {
             background-color: white;
@@ -665,6 +620,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
         .portfolio-filter button {
@@ -672,7 +628,6 @@
             border: none;
             color: #8b88b1;
             font-weight: 500;
-            margin: 0 10px 10px;
             padding: 8px 20px;
             border-radius: 50px;
             position: relative;
@@ -852,6 +807,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
 
         .contact-form:before {
@@ -912,6 +868,10 @@
 
         .footer-social {
             margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .footer-social a {
@@ -923,7 +883,6 @@
             color: white;
             border-radius: 50%;
             display: inline-block;
-            margin: 0 10px;
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             font-size: 18px;
         }
@@ -1026,7 +985,7 @@
             }
 
             .hero-image img {
-                transform: none;
+                max-width: 400px;
             }
 
             .timeline::after {
@@ -1078,6 +1037,15 @@
             .portfolio-filter {
                 justify-content: flex-start;
             }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .contact-info-item {
+                flex-direction: row;
+                text-align: left;
+            }
         }
 
         @media (max-width: 575.98px) {
@@ -1097,7 +1065,6 @@
             .btn-outline-primary {
                 padding: 10px 20px;
                 font-size: 14px;
-                display: block;
                 width: 100%;
                 margin-bottom: 15px;
             }
@@ -1109,12 +1076,19 @@
             .contact-info-item {
                 flex-direction: column;
                 text-align: center;
-                padding: 12px;
             }
 
             .contact-info-icon {
                 margin-right: 0;
                 margin-bottom: 10px;
+            }
+
+            .portfolio-filter {
+                justify-content: center;
+            }
+
+            .portfolio-filter button {
+                margin: 0 5px 10px;
             }
         }
     </style>
@@ -1181,24 +1155,19 @@
                 </div>
                 <!-- RIGHT IMAGE -->
                 <div class="col-lg-6 text-center mt-5 mt-lg-0">
-                    <div class="hero-image" data-aos="fade-left" data-aos-delay="400" style="margin-top: -20px;">
+                    <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
                         <img src="assets/img/dhruvi_1.png" alt="Dhruvi Gohil" class="img-fluid"
                             style="max-width: 450px;">
                     </div>
                 </div>
-
-
-
-
-
-                <!-- Scroll indicator -->
-                <div class="scroll-down" data-aos="fade-up" data-aos-delay="500">
-                    <a href="#about"><i class="fas fa-angle-double-down"></i></a>
-                </div>
             </div>
+
+            <!-- Scroll indicator -->
+            <div class="scroll-down" data-aos="fade-up" data-aos-delay="500">
+                <a href="#about"><i class="fas fa-angle-double-down"></i></a>
+            </div>
+        </div>
     </section>
-
-
 
     <!-- About Section -->
     <section id="about" class="section-padding">
@@ -1229,9 +1198,9 @@
                         <div class="about-info">
                             <ul>
                                 <li><strong>Name:</strong> Dhruvi Gohil</li>
-                                <li><strong>Email:</strong>gohildhruvi168529@gmail.com</li>
+                                <li><strong>Email:</strong> gohildhruvi168529@gmail.com</li>
                                 <li><strong>Phone:</strong> +91 93284 65993</li>
-                                <li><strong>Location:</strong>Surat, Gujarat, India</li>
+                                <li><strong>Location:</strong> Surat, Gujarat, India</li>
                                 <li><strong>Freelance:</strong> Available</li>
                                 <li><strong>Experience:</strong> Fresher</li>
                             </ul>
@@ -1594,129 +1563,149 @@
             <div class="row portfolio-grid">
                 <!-- Project 1 -->
                 <div class="col-lg-4 col-md-6 portfolio-item bootstrap" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/img/Bootstrap-Architecture.png" alt="E-commerce Platform" class="img-fluid">
-                    <div class="portfolio-overlay">
-                        <h4>E-commerce Platform</h4>
-                        <p>Full stack e-commerce solution with React frontend and Node.js backend</p>
-                        <a href="https://bootstrap-architecture.vercel.app/" target="_blank"
-                            class="btn btn-outline-light mt-2">View Live</a>
+                    <div class="portfolio-item-wrapper">
+                        <img src="assets/img/Bootstrap-Architecture.png" alt="E-commerce Platform" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h4>E-commerce Platform</h4>
+                            <p>Full stack e-commerce solution with React frontend and Node.js backend</p>
+                            <a href="https://bootstrap-architecture.vercel.app/" target="_blank"
+                                class="btn btn-outline-light mt-2">View Live</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="col-lg-4 col-md-6 portfolio-item bootstrap" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/img/Bootstrap-Matrix.png" alt="Task Management App" class="img-fluid">
-                    <div class="portfolio-overlay">
-                        <h4>Task Management App</h4>
-                        <p>React application with Firebase backend for task organization</p>
-                        <a href="https://bootstrap-matrix-admin.vercel.app/" target="_blank"
-                            class="btn btn-outline-light mt-2">View Live</a>
+                    <div class="portfolio-item-wrapper">
+                        <img src="assets/img/Bootstrap-Matrix.png" alt="Task Management App" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h4>Task Management App</h4>
+                            <p>React application with Firebase backend for task organization</p>
+                            <a href="https://bootstrap-matrix-admin.vercel.app/" target="_blank"
+                                class="btn btn-outline-light mt-2">View Live</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
                 <div class="col-lg-4 col-md-6 portfolio-item bootstrap" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/img/Bootstrap-Restaurant.png" alt="Blog Platform" class="img-fluid">
-                    <div class="portfolio-overlay">
-                        <h4>Blog Platform</h4>
-                        <p>MERN stack application with user authentication and CRUD operations</p>
-                        <a href="https://bootstrap-restaurant-orcin.vercel.app/" target="_blank"
-                            class="btn btn-outline-light mt-2">View Live</a>
+                    <div class="portfolio-item-wrapper">
+                        <img src="assets/img/Bootstrap-Restaurant.png" alt="Blog Platform" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h4>Blog Platform</h4>
+                            <p>MERN stack application with user authentication and CRUD operations</p>
+                            <a href="https://bootstrap-restaurant-orcin.vercel.app/" target="_blank"
+                                class="btn btn-outline-light mt-2">View Live</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 4 -->
                 <div class="col-lg-4 col-md-6 portfolio-item htmlcss" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/img/Html-Css-cosmetic.png" alt="Weather App" class="img-fluid">
-                    <div class="portfolio-overlay">
-                        <h4>Weather Application</h4>
-                        <p>JavaScript application fetching real-time weather data from API</p>
-                        <a href="https://html-css-project-cosmetic.vercel.app/" target="_blank"
-                            class="btn btn-outline-light mt-2">View Live</a>
+                    <div class="portfolio-item-wrapper">
+                        <img src="assets/img/Html-Css-cosmetic.png" alt="Weather App" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h4>Weather Application</h4>
+                            <p>JavaScript application fetching real-time weather data from API</p>
+                            <a href="https://html-css-project-cosmetic.vercel.app/" target="_blank"
+                                class="btn btn-outline-light mt-2">View Live</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 5 -->
                 <div class="col-lg-4 col-md-6 portfolio-item htmlcss" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/img/Html-Css-Tailwind.png" alt="Recipe Finder" class="img-fluid">
-                    <div class="portfolio-overlay">
-                        <h4>Recipe Finder</h4>
-                        <p>React application with search functionality and favorite recipes</p>
-                        <a href="https://html-css-project-techwind.vercel.app/" target="_blank"
-                            class="btn btn-outline-light mt-2">View Live</a>
+                    <div class="portfolio-item-wrapper">
+                        <img src="assets/img/Html-Css-Tailwind.png" alt="Recipe Finder" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h4>Recipe Finder</h4>
+                            <p>React application with search functionality and favorite recipes</p>
+                            <a href="https://html-css-project-techwind.vercel.app/" target="_blank"
+                                class="btn btn-outline-light mt-2">View Live</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 6 -->
                 <div class="col-lg-4 col-md-6 portfolio-item htmlcss" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/img/Html-Css-TheFolio.png" alt="Real-time Chat App" class="img-fluid">
-                    <div class="portfolio-overlay">
-                        <h4>Real-time Chat App</h4>
-                        <p>Node.js with Socket.io for real-time communication</p>
-                        <a href="https://html-css-project-the-folio.vercel.app/" target="_blank"
-                            class="btn btn-outline-light mt-2">View Live</a>
+                    <div class="portfolio-item-wrapper">
+                        <img src="assets/img/Html-Css-TheFolio.png" alt="Real-time Chat App" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h4>Real-time Chat App</h4>
+                            <p>Node.js with Socket.io for real-time communication</p>
+                            <a href="https://html-css-project-the-folio.vercel.app/" target="_blank"
+                                class="btn btn-outline-light mt-2">View Live</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 7 -->
                 <div class="col-lg-4 col-md-6 portfolio-item bootstrap" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/img/jewelry.png" alt="Jewelry E-commerce" class="img-fluid">
-                    <div class="portfolio-overlay">
-                        <h4>Jewelry E-commerce</h4>
-                        <p>Online store for jewelry products with shopping cart functionality</p>
-                        <a href="https://bootstrap-jewelry.vercel.app/" target="_blank"
-                            class="btn btn-outline-light mt-2">View Live</a>
+                    <div class="portfolio-item-wrapper">
+                        <img src="assets/img/jewelry.png" alt="Jewelry E-commerce" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h4>Jewelry E-commerce</h4>
+                            <p>Online store for jewelry products with shopping cart functionality</p>
+                            <a href="https://bootstrap-jewelry.vercel.app/" target="_blank"
+                                class="btn btn-outline-light mt-2">View Live</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 8 -->
                 <div class="col-lg-4 col-md-6 portfolio-item javascript" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/img/JS-Calculator.png" alt="JavaScript Calculator" class="img-fluid">
-                    <div class="portfolio-overlay">
-                        <h4>JavaScript Calculator</h4>
-                        <p>Interactive calculator built with vanilla JavaScript</p>
-                        <a href="https://javascript-calculator-three-beta.vercel.app/" target="_blank"
-                            class="btn btn-outline-light mt-2">View Live</a>
+                    <div class="portfolio-item-wrapper">
+                        <img src="assets/img/JS-Calculator.png" alt="JavaScript Calculator" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h4>JavaScript Calculator</h4>
+                            <p>Interactive calculator built with vanilla JavaScript</p>
+                            <a href="https://javascript-calculator-three-beta.vercel.app/" target="_blank"
+                                class="btn btn-outline-light mt-2">View Live</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 9 -->
                 <div class="col-lg-4 col-md-6 portfolio-item javascript" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/img/JS-Clock.png" alt="Digital Clock" class="img-fluid">
-                    <div class="portfolio-overlay">
-                        <h4>Digital Clock</h4>
-                        <p>Real-time digital clock with JavaScript</p>
-                        <a href="https://digital-clock-stopwatch-nine.vercel.app/" target="_blank"
-                            class="btn btn-outline-light mt-2">View Live</a>
+                    <div class="portfolio-item-wrapper">
+                        <img src="assets/img/JS-Clock.png" alt="Digital Clock" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h4>Digital Clock</h4>
+                            <p>Real-time digital clock with JavaScript</p>
+                            <a href="https://digital-clock-stopwatch-nine.vercel.app/" target="_blank"
+                                class="btn btn-outline-light mt-2">View Live</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 10 -->
                 <div class="col-lg-4 col-md-6 portfolio-item javascript" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/img/JS-Weather.png" alt="Weather Forecast App" class="img-fluid">
-                    <div class="portfolio-overlay">
-                        <h4>Weather Forecast App</h4>
-                        <p>Real-time weather forecast using JavaScript and APIs</p>
-                        <a href="https://javascript-weather-seven.vercel.app/" target="_blank"
-                            class="btn btn-outline-light mt-2">View Live</a>
+                    <div class="portfolio-item-wrapper">
+                        <img src="assets/img/JS-Weather.png" alt="Weather Forecast App" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h4>Weather Forecast App</h4>
+                            <p>Real-time weather forecast using JavaScript and APIs</p>
+                            <a href="https://javascript-weather-seven.vercel.app/" target="_blank"
+                                class="btn btn-outline-light mt-2">View Live</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 11 -->
                 <div class="col-lg-4 col-md-6 portfolio-item nodejs" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/img/NodeJs-Matrix.png" alt="Node.js Admin Panel" class="img-fluid">
-                    <div class="portfolio-overlay">
-                        <h4>Node.js Admin Panel</h4>
-                        <p>Node.js admin panel with Passport.js authentication</p>
-                        <a href="https://nodejsadminpanelpassport.onrender.com/" target="_blank"
-                            class="btn btn-outline-light mt-2">View Live</a>
+                    <div class="portfolio-item-wrapper">
+                        <img src="assets/img/NodeJs-Matrix.png" alt="Node.js Admin Panel" class="img-fluid">
+                        <div class="portfolio-overlay">
+                            <h4>Node.js Admin Panel</h4>
+                            <p>Node.js admin panel with Passport.js authentication</p>
+                            <a href="https://nodejsadminpanelpassport.onrender.com/" target="_blank"
+                                class="btn btn-outline-light mt-2">View Live</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
 
     <!-- Contact Section -->
     <section id="contact" class="section-padding">
@@ -1800,7 +1789,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-light py-4 mt-4">
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -1835,7 +1824,6 @@
             </div>
         </div>
     </footer>
-
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
@@ -1992,24 +1980,7 @@
             });
         }
 
-        // Animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.animate__animated');
-
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-
-                if (elementPosition < windowHeight - 100) {
-                    const animationClass = element.classList[1];
-                    element.classList.add(animationClass);
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
+        // Typing animation
         const typedTextSpan = document.querySelector(".typed-text");
         const cursorSpan = document.querySelector(".cursor");
 
@@ -2021,7 +1992,6 @@
             "Frontend Developer",
             "Data Structures & Algorithms in JavaScript"
         ];
-
 
         const typingDelay = 100;
         const erasingDelay = 60;
