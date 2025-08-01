@@ -89,6 +89,30 @@
         }
 
         /* Navbar */
+
+        /* Logo Styling */
+        .portfolio-logo {
+            font-family: var(--heading-font);
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--dark-color);
+            text-decoration: none;
+            background-image: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .portfolio-logo span {
+            font-family: var(--heading-font);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .portfolio-logo:hover {
+            transform: scale(1.05);
+        }
+
         .navbar {
             padding: 15px 0;
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1098,9 +1122,13 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-sparkles me-2"></i>Dhruvi<span>Gohil</span>
-            </a>
+            <!-- Logo Section -->
+            <header class="logo-header">
+                <div class="container text-center">
+                    <a href="#" class="portfolio-logo">Dhruvi <span>Gohil</span></a>
+                </div>
+            </header>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
