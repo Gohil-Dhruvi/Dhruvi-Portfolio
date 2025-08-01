@@ -83,7 +83,6 @@ backToTopButton.addEventListener('click', function (e) {
     });
 });
 
-// Portfolio filtering
 document.addEventListener('DOMContentLoaded', function () {
     const portfolioFilterButtons = document.querySelectorAll('.portfolio-filter button');
     const portfolioGrid = document.querySelector('.portfolio-grid');
@@ -91,7 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize Isotope
     const iso = new Isotope(portfolioGrid, {
         itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
+        layoutMode: 'fitRows',
+        percentPosition: true
     });
 
     // Filter items on button click
@@ -113,42 +113,76 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Form submission
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        // Get form values
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const subject = this.querySelector('input[placeholder="Subject"]').value;
-        const message = this.querySelector('textarea').value;
+        const formData = new FormData(this);
 
-        // Here you would typically send the form data to a server
-        // For this example, we'll just log it and show an alert
-        console.log({ name, email, subject, message });
-
-        alert('Thank you for your message, ' + name + '! I will get back to you soon.');
-        this.reset();
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert('Thank you for your message! I will get back to you soon.');
+                    this.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                alert('There was a problem sending your message. Please try again later.');
+                console.error('Error:', error);
+            });
     });
 }
 
-// Animation on scroll
-function animateOnScroll() {
-    const elements = document.querySelectorAll('.animate__animated');
+// Typing animation
+const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
 
-    elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
+const textArray = [
+    "Full Stack Web Developer",
+    "MERN Stack Web Developer",
+    "Backend Developer",
+    "React.js & Node.js Developer",
+    "Frontend Developer",
+    "Data Structures & Algorithms in JavaScript"
+];
 
-        if (elementPosition < windowHeight - 100) {
-            const animationClass = element.classList[1];
-            element.classList.add(animationClass);
-        }
-    });
+const typingDelay = 100;
+const erasingDelay = 60;
+const newTextDelay = 2000;
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+    } else {
+        setTimeout(erase, newTextDelay);
+    }
 }
 
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
+function erase() {
+    if (charIndex > 0) {
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+    } else {
+        textArrayIndex = (textArrayIndex + 1) % textArray.length;
+        setTimeout(type, typingDelay + 200);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (textArray.length) setTimeout(type, newTextDelay + 250);
+});
