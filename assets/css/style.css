@@ -344,7 +344,7 @@ a:hover {
 
 .about-info ul li strong {
     color: var(--dark-color);
-    min-width: 120px;
+    min-width: 50px;
     display: inline-block;
 }
 
@@ -576,6 +576,19 @@ a:hover {
 .timeline-item-right .timeline-badge {
     right: auto;
     left: 20px;
+}
+
+.certification-badge {
+     position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: rgba(255, 133, 162, 0.1);
+    color: var(--primary-color);
 }
 
 /* Portfolio Section */
@@ -987,6 +1000,7 @@ footer {
     .timeline-item-right {
         left: 0;
     }
+    
 
     .timeline-item-right .timeline-badge {
         left: auto;
@@ -1059,6 +1073,11 @@ footer {
 }
 
 @media (max-width: 575.98px) {
+
+    .conatiner {
+        max-width: 500px !important;
+    }
+
     .section-padding {
         padding: 50px 0;
     }
@@ -1094,7 +1113,10 @@ footer {
     }
 
     .portfolio-filter {
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin: 20px;
     }
 
     .portfolio-filter button {
@@ -1116,7 +1138,6 @@ footer {
     }
 
     .navbar {
-        max-width: 576px !important;
         padding-left: 15px;
         padding-right: 15px;
     }
