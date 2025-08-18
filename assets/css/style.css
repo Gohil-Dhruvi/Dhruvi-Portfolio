@@ -910,8 +910,8 @@ footer {
 }
 
 .back-to-top:hover {
+    color: white;
     transform: translateY(-5px) rotate(360deg);
-    box-shadow: 0 15px 30px rgba(255, 133, 162, 0.4);
 }
 
 /* Animations */
